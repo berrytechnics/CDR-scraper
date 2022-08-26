@@ -101,6 +101,6 @@ app.get('/',(req,res)=>{
             })
     })
 })
-app.listen(3000,()=>console.log('server started...'))
+app.listen(process.env.POST||3000,()=>console.log('server started...'))
 
  export default app;
