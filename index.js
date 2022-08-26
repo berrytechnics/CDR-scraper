@@ -1,6 +1,7 @@
 import cheerio from 'cheerio';
 import rp from 'request-promise';
 import express from 'express';
+import cors from 'cors'
 const links = {
     "iPhone":[
         "https://www.cdrokc.com/iphone-8%ef%bf%bc/",
@@ -50,6 +51,7 @@ const priceList ={
 }
 
 const app = express();
+app.use(cors())
 app.set('view engine','ejs')
 let iPhonePrices= new Promise((res,rej)=>{
     links.iPhone.forEach((link,i,a)=>{
